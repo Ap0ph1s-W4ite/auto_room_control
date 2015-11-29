@@ -7,7 +7,9 @@ The objective for this project is to control your room temperature, open the win
 V1.0
 
 - Added temp_control.py
-File that will control GPIO from the Raspberry Pi according to the temperature readed from the sensor (DS18B20)
+
+  - File that will control GPIO from the Raspberry Pi according to the temperature readed from the sensor (DS18B20)
 
 - Added temp_data.py
-This file, through your terminal, will show the temperature readed from the sensor.
+
+  - This file, through your terminal, will show the temperature readed from the sensor.
