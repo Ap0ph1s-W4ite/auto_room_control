@@ -41,3 +41,4 @@ def read_temp_out():
         temp_string = lines_out[1][equals_pos+2:]
         temp_out = float(temp_string) / 1000.0
         return temp_out
+
