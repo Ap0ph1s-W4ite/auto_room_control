@@ -9,7 +9,7 @@ import subprocess
 os.system( 'modprobe w1-gpio' )
 os.system( 'modprobe w1-therm' )
 base_dir = '/sys/bus/w1/devices/'
-device_folder = glob.glob( base_dir + '28-000004e46094' )[0]
+device_folder = glob.glob( base_dir + 'ID1' )[0]
 device_file = device_folder + '/w1_slave'
 GPIO.setmode( GPIO.BCM )
 GPIO.setwarnings( False )
