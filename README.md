@@ -113,7 +113,7 @@ while True:
 Just change "17" and "18" to your GPIO port. The numbers "22" and "21" are the temperatures, I have 2 radiators, but if you just have one, you can eliminate the line that you don't need. If you don't know what to delete, just use the "#" to guide you.
 
 
-The logger it's just to see a log file, if you want to use, please translate to your languge, they are in portuguese.
+The logger it's just to see a log file, if you want to use it, please translate to your languge, they are in portuguese.
 
 To see the logs you need to create a folder.
 ```sh
