@@ -1,9 +1,15 @@
 #!/usr/bin/env python
 import os
+import p017A
 import time
 import glob
 import re
 import subprocess
+from sv3A import sv3Bus
+
+bus = sv3Bus(0,'1','') # change to '1' to '0' for older RPi
+lcd = p017A.p017(bus,56)
+
 os.system( 'modprobe w1-gpio' )
 os.system( 'modprobe w1-therm' )
 base_dir = '/sys/bus/w1/devices/'
@@ -41,4 +47,42 @@ def read_temp_out():
         temp_string = lines_out[1][equals_pos+2:]
         temp_out = float(temp_string) / 1000.0
         return temp_out
+		
+def getCPUtemperature():
+    res = os.popen('vcgencmd measure_temp').readline()
+    return(res.replace("temp=","").replace("'C\n",""))
+	
+def getCPUuse():
+    return(str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip(\
+)))
 
+count = 0
+
+while(True)
+	read_temp_in() = tempin
+	read_temp_out() = tempout
+	getCPUtemperature() = cputemperature
+	getCPUuse() = usecpu
+	lcd.cls()
+	lcd.rc(0,1)
+	lcd.lcd("TEMP. EXTERIOR")
+	lcd.rc(1,0)
+	lcd.lcd(tempout)
+	lcd.lcd(" C")
+	time.sleep(5)
+	lcd.cls()
+	lcd.rc(0,1)
+	lcd.lcd("TEMP. INTERIOR")
+	lcd.rc(1,0)
+	lcd.lcd(tempin)
+	lcd.lcd(" C")
+	time.sleep(5)
+	lcd.cls()
+	lcd.rc(0,0)
+	lcd.lcd("TEMPERATURA CPU")
+	lcd.rc(1,0)
+	lcd.lcd(cputemperature)
+	lcd.lcd(" C")
+	time.sleep(5)
+	lcd.cls()
+	lcd.rc()
