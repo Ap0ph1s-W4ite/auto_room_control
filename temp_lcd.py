@@ -56,33 +56,37 @@ def getCPUuse():
     return(str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip(\
 )))
 
-count = 0
-
-while(True)
-	read_temp_in() = tempin
-	read_temp_out() = tempout
-	getCPUtemperature() = cputemperature
-	getCPUuse() = usecpu
+while True:
+	tempin = read_temp_in()
+	tempout = read_temp_out()
+	cputemperature = getCPUtemperature()
+	usecpu = getCPUuse()
 	lcd.cls()
 	lcd.rc(0,1)
 	lcd.lcd("TEMP. EXTERIOR")
-	lcd.rc(1,0)
+	lcd.rc(1,4)
 	lcd.lcd(tempout)
 	lcd.lcd(" C")
 	time.sleep(5)
 	lcd.cls()
 	lcd.rc(0,1)
 	lcd.lcd("TEMP. INTERIOR")
-	lcd.rc(1,0)
+	lcd.rc(1,4)
 	lcd.lcd(tempin)
 	lcd.lcd(" C")
 	time.sleep(5)
 	lcd.cls()
 	lcd.rc(0,0)
 	lcd.lcd("TEMPERATURA CPU")
-	lcd.rc(1,0)
+	lcd.rc(1,5)
 	lcd.lcd(cputemperature)
 	lcd.lcd(" C")
 	time.sleep(5)
 	lcd.cls()
-	lcd.rc()
+	lcd.rc(0,3)
+	lcd.lcd("USO DO CPU")
+	lcd.rc(1,5)
+	lcd.lcd(usecpu)
+	lcd.lcd("%")
+	time.sleep(5)
+	count = count + 1
