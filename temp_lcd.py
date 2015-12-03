@@ -89,4 +89,3 @@ while True:
 	lcd.lcd(usecpu)
 	lcd.lcd("%")
 	time.sleep(5)
-	count = count + 1
