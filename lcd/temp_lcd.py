@@ -13,9 +13,9 @@ lcd = p017A.p017(bus,56)
 os.system( 'modprobe w1-gpio' )
 os.system( 'modprobe w1-therm' )
 base_dir = '/sys/bus/w1/devices/'
-device_folder_in = glob.glob( base_dir + '28-000004e46094' )[0]
+device_folder_in = glob.glob( base_dir + 'ID1' )[0]
 device_file_in = device_folder_in + '/w1_slave'
-device_folder_out = glob.glob( base_dir + '28-0000057debdf' )[0]
+device_folder_out = glob.glob( base_dir + 'ID2' )[0]
 device_file_out = device_folder_out + '/w1_slave'
 def read_temp_raw_in():
     f = open(device_file_in, 'r')
