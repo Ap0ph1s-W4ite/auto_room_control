@@ -18,7 +18,7 @@ V1.1
 - temp_data.py updated.
 - temp_control.py updated
 - Added LCD Suport.
-  - You can use a LCD qith a P017 Chip to see temperature and usage from CPU.
+  - You can use a LCD with a P017 Chip to see temperature and usage from CPU.
 
 =============================================
 ###Installation
