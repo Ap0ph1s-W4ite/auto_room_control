@@ -33,21 +33,6 @@ def read_temp():
         temp_c1 = float(temp_string) / 1000.0
         return temp_c1
 
-logger = logging.getLogger()
-logger.setLevel(logging.DEBUG)
-
-formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-
-fh = logging.FileHandler('/home/master/temp_p_room/logs/log_temp_control.txt')
-fh.setLevel(logging.DEBUG)
-fh.setFormatter(formatter)
-logger.addHandler(fh)
-
-ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
-ch.setFormatter(formatter)
-logger.addHandler(ch)
-
 ledMode( 17, GPIO.LOW )
 logger.info('GPIO 17 - Set to LOW.')
 
